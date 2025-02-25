@@ -7,7 +7,7 @@
 
 ## Demo
 
-![animated_counter](./images/animated_counter.gif)
+<img src="./images/animated_counter.gif" width="200"  alt="animated_counter"/>
 
 ## Development
 
