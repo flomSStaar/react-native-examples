@@ -8,7 +8,8 @@
 
 ### Constants
 
-It is easy to adjust the spacing, colors, borders, and shadows of the app. The constants are defined in the `src/constants` folder.
+It is easy to adjust the spacing, colors, borders, and shadows of the app. The constants are defined in the
+`src/constants` folder.
 
 For colors, it supports light and dark mode.
 
@@ -33,11 +34,11 @@ export const Colors = {
 
 ## Screenshots
 
-| Écran   | Light                                    | Dark                                    |
-|---------|------------------------------------------|-----------------------------------------|
-| Accueil | ![home_top](./images/light/home_top.png) | ![home_top](./images/dark/home_top.png) |
-| Carte   | ![map](./images/light/map.png)           | ![map](./images/dark/map.png)           |
-| Recherche| ![search](./images/light/search.png)     | ![search](./images/dark/search.png)     |
+| Écran      | Light                                    | Dark                                    |
+|------------|------------------------------------------|-----------------------------------------|
+| Accueil    | ![home_top](./images/light/home_top.png) | ![home_top](./images/dark/home_top.png) |
+| Carte      | ![map](./images/light/map.png)           | ![map](./images/dark/map.png)           |
+| Recherche  | ![search](./images/light/search.png)     | ![search](./images/dark/search.png)     |
 | Paramètres | ![settings](./images/light/settings.png) | ![settings](./images/dark/settings.png) |
 
 ## Development
