@@ -12,6 +12,10 @@ This repository contains a collection of example projects demonstrating various 
   - Light/dark mode
   - Constants for spacing, colors, borders, and shadows
 
+- **Animated counter**
+  - Animated counter
+  - Custom components
+  - Customizable number format
 
 ## Getting Started
 
