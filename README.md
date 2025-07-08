@@ -22,6 +22,12 @@ This repository contains a collection of example projects demonstrating various 
   - Customizable item size and spacing
   - Fluent animations
 
+- **Animated wallpaper carousel**
+  - Animated wallpaper carousel
+  - Animated blur effect on background
+  - Animated dots
+  - Entering animations
+
 ## Getting Started
 
 To get started with any of the projects, follow these steps:

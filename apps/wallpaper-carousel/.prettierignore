@@ -1,0 +1,10 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+pnpm-lock.yaml
+.prettierrc.json
+.eslintrc.json
+.expo/**
+android/**
+ios/**
