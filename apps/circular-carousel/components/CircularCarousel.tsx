@@ -4,6 +4,7 @@ import Animated, {
   FadeIn,
   FadeOut,
   runOnJS,
+  useAnimatedRef,
   useAnimatedScrollHandler,
   useSharedValue,
 } from 'react-native-reanimated'
@@ -18,6 +19,7 @@ const { width } = Dimensions.get('screen')
 export function CircularCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollX = useSharedValue(0)
+  const listRef = useAnimatedRef<Animated.FlatList<string>>()
 
   const onScroll = useAnimatedScrollHandler(e => {
     scrollX.value = e.contentOffset.x / ITEM_TOTAL_SIZE
@@ -28,6 +30,12 @@ export function CircularCarousel() {
       runOnJS(setActiveIndex)(newActiveIndex)
     }
   })
+
+  const handleItemPress = (index: number) => {
+    listRef.current?.scrollToOffset({
+      offset: index * ITEM_TOTAL_SIZE,
+    })
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: '#000', justifyContent: 'flex-end' }}>
@@ -40,6 +48,7 @@ export function CircularCarousel() {
         <Image source={{ uri: IMAGES[activeIndex] }} style={{ flex: 1 }} />
       </Animated.View>
       <Animated.FlatList
+        ref={listRef}
         data={IMAGES}
         style={{
           flexGrow: 0,
@@ -50,7 +59,7 @@ export function CircularCarousel() {
           gap: ITEM_SPACING,
         }}
         renderItem={({ item, index }) => {
-          return <CarouselItem index={index} imageUri={item} scrollX={scrollX} />
+          return <CarouselItem index={index} imageUri={item} scrollX={scrollX} onItemPress={handleItemPress} />
         }}
         horizontal
         showsHorizontalScrollIndicator={false}

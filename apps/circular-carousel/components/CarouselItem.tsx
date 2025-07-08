@@ -1,4 +1,4 @@
-import { Image } from 'react-native'
+import { Image, Pressable } from 'react-native'
 import { ITEM_BORDER_WIDTH, ITEM_RADIUS, ITEM_SIZE } from '@/constants/sizes'
 import Animated, { interpolate, interpolateColor, type SharedValue, useAnimatedStyle } from 'react-native-reanimated'
 
@@ -6,9 +6,10 @@ interface Props {
   index: number
   imageUri: string
   scrollX: SharedValue<number>
+  onItemPress?: (index: number) => void
 }
 
-export function CarouselItem({ imageUri, index, scrollX }: Props) {
+export function CarouselItem({ imageUri, index, scrollX, onItemPress }: Props) {
   const animatedStyle = useAnimatedStyle(() => {
     return {
       borderColor: interpolateColor(
@@ -23,18 +24,20 @@ export function CarouselItem({ imageUri, index, scrollX }: Props) {
   })
 
   return (
-    <Animated.View
-      style={[
-        animatedStyle,
-        {
-          width: ITEM_SIZE,
-          height: ITEM_SIZE,
-          borderRadius: ITEM_RADIUS,
-          borderWidth: ITEM_BORDER_WIDTH,
-        },
-      ]}
-    >
-      <Image source={{ uri: imageUri }} style={{ flex: 1, borderRadius: ITEM_RADIUS }} />
-    </Animated.View>
+    <Pressable onPress={() => onItemPress?.(index)}>
+      <Animated.View
+        style={[
+          animatedStyle,
+          {
+            width: ITEM_SIZE,
+            height: ITEM_SIZE,
+            borderRadius: ITEM_RADIUS,
+            borderWidth: ITEM_BORDER_WIDTH,
+          },
+        ]}
+      >
+        <Image source={{ uri: imageUri }} style={{ flex: 1, borderRadius: ITEM_RADIUS }} />
+      </Animated.View>
+    </Pressable>
   )
 }
