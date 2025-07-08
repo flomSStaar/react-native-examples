@@ -17,6 +17,11 @@ This repository contains a collection of example projects demonstrating various 
   - Custom components
   - Customizable number format
 
+- **Animated circular carousel**
+  - Animated circular carousel
+  - Customizable item size and spacing
+  - Fluent animations
+
 ## Getting Started
 
 To get started with any of the projects, follow these steps:
